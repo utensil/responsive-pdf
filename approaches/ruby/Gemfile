@@ -1,0 +1,18 @@
+source 'http://rubygems.org'
+
+gem 'pdf-reader'
+
+# How to install 'ft2-ruby' under Windows:
+# * ensure [DevKit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit) is installed
+# * enter MSYS environment bundled with DevKit
+# * install [freetype2 pre-built windows binary](http://gnuwin32.sourceforge.net/packages/freetype.htm)
+# * create a new directory "local" under DevKit installation directory
+# * copy include/* and lib/* under freetype2 installation directory to "local"
+# * gem install ft2-ruby  --verbose -- --with-opt-dir=/usr/local/ --with-opt-include=/usr/local/include:/usr/local/include/freetype2   --without-freetype-config
+# * bundle install
+# Done.
+gem 'ft2-ruby'
+
+group :test do 
+    gem 'rspec' 
+end
