@@ -1,0 +1,360 @@
+\chapter{Useful Environments}
+
+\section{Lists}
+
+\subsection{Itemize}
+
+Default Style:
+
+\begin{itemize}
+
+\item Apple
+\item Pear
+\item Banana
+\end{itemize}
+
+Customized Style\footnote{But it looks stupid.}:
+
+\begin{itemize}
+
+\item[*] Eye
+\item[*] Nose
+\item[*] Ear
+\end{itemize}
+
+\subsection{Enumerate}
+
+\begin{enumerate}
+
+\item Point
+\item Line
+\item Polygon
+\end{enumerate}
+
+\subsection{Description}
+
+I prefer calling it definitions.
+
+\begin{description}
+
+\item[erkl\" aren]German word,meaning ``explain''.
+
+\item[kl\" aren]German word,meaning ``clear''.
+
+\end{description}
+
+\section{Aligning}
+
+\subsection{Flushleft}
+
+\begin{flushleft}
+
+This text is\\ left-aligned. \LaTeX{} is not trying to\\ make each
+line the same length.
+
+\end{flushleft}
+
+\subsection{Flushright}
+
+\begin{flushright}
+
+This text is\\ left-aligned. \LaTeX{} is not trying to\\ make each
+line the same length.
+
+\end{flushright}
+
+\subsection{Center}
+
+\begin{center}
+
+In the tremendous sea of faces.\\
+
+We met,gathered then seperated.\\
+
+I hope our friendship will go beyond time and space.\\
+
+Wish you
+happiness and merriment.
+
+\end{center}
+
+\section{Quoting}
+
+\subsection{Quote}
+
+In \emph{The Winter's Tale},Shakespear said:
+
+\begin{quote}
+
+I should leave grazing,were I of your flock,and only live by gazing.
+
+\end{quote}
+
+\subsection{Quotation}
+
+Quoting paragraphs:
+
+\begin{quotation}
+
+This fertile and sheltered tract of country, in which the fields are
+never brown and the springs never dry, is bounded on the south by
+the bold chalk ridge\ldots
+
+The district is of historic, no less than of topographical interest.
+
+The Vale was known in former times as the Forest of White Hart, from
+a curious legend of King Henry III's reign\ldots
+
+The forests have departed, but some old customs of their shades
+remain. Many, however, linger only in a metamorphosed or disguised
+form. \ldots
+\end{quotation}
+
+\subsection{Verse}
+
+It's used for quoting poems.
+
+\begin{verse}
+
+\begin{center}
+
+I've Got A Pain In My Sawdust
+w. Henry Edward Warner m. Herman Avery Wade
+\end{center}
+
+\ldots
+
+I've got a pain in my sawdust, \\
+
+That's what's the matter with me;\\
+
+Something is wrong with my little inside,\\
+
+I'm just as sick as can be.
+
+Don't let me faint, \\
+
+someone get me a fan,\\
+
+Someone else run for the medicine man,\\
+
+Ev'ryone hurry as fast as you can,\\
+
+I've got a pain in my sawdust.
+
+\ldots
+
+Oh, sad was the day for the little bisque doll,\\
+
+For they cut all her stitches away,\\
+
+And looked for the seat of the terrible ache;\\
+
+``T'was a delicate task", they all say,\\
+
+For none of the surgeons had ever before\\
+
+Performed on a dolly's inside,\\
+
+They tried to restuff her but didn't know how,\\
+
+And this was her wail as she died;\\
+
+I've got a pain\ldots
+\end{verse}
+
+\section{Just Show It In The Way That It's Typed}
+
+\begin{verbatim}
+
+Use the pair of
+
+                            \begin{verbatim}
+
+        And
+\end{verbatim}
+
+\verb| \end{verbatim}|
+
+\begin{verbatim}
+        Or
+                \verb| Contents that you want them to be
+                shown in the way it's typed |
+      Actually,| pair can be replaced by any symbol pair
+                        like + # @ &
+                      expect * and space,
+                      
+I guess it's prepared for CODES.
+
+\end{verbatim}
+
+\section{Tabular}
+
+Now it's time to create tables.
+
+\verb|\begin{Tabular}{|\emph{Table Style}\verb|}|
+\emph{Table Contents}
+
+\verb|\end{Tabular}|
+
+\subsection{Table Style}
+
+\emph{Table Style}\ is not responsible for the creation of horizonal
+lines in the table,that's the responsibility of \emph{Table
+Contents}'s.
+
+\begin{description}
+
+\item[l,r,c] creates a row that is left-aligned,right-aligned or
+centered.
+
+\item[p\{\emph{width}\}] creates a row by the given width.
+
+\item[$|$] creates a vertical line to separate rows.
+
+\item[@\{\emph{symbol}\}]separate rows with the symbol
+\emph{symbol}.
+
+\end{description}
+
+\subsection{Table Contents}
+
+\begin{description}
+
+\item[\&] jump to the next row.
+
+\item[$\backslash\backslash$] jump to the next line.
+
+\item[$\backslash$hline] creates a horizonal line through all rows.
+
+\item[$\backslash$cline\{\emph{i}-\emph{j}\}] creates a horizonal line from row \emph{i} to row \emph{j}.
+
+\end{description}
+
+\subsection{Examples}
+
+An ordinary table:\\
+
+\begin{tabular}{|r|l|}
+
+\hline
+7C0 & hexadecimal \\
+
+3700 & octal \\ \cline{2-2}
+
+11111000000 & binary \\
+
+\hline \hline
+1984 & decimal \\
+
+\hline
+\end{tabular}
+
+Using \verb|@{}|\ to coordinate the radix point:\\
+
+\begin{tabular}{c r @{.} l}
+
+Pi expression &
+\multicolumn{2}{c}{Value} \\
+
+\hline
+$\pi$ & 3&1416 \\
+
+$\pi^{\pi}$ & 36&46 \\
+
+$(\pi^{\pi})^{\pi}$ & 80662&7 \\
+
+\end{tabular}
+
+\section{Where To Put It?Float It!}
+
+\verb|begin{figure}[|\emph{placement specifier}]
+
+or
+\verb|begin{table}[|\emph{placement specifier}]
+
+\begin{tabular}{c @{} c}
+
+placement specifier & where to put it\\
+
+\hline
+h & put it on the current page. \\
+
+t & put it on the top of a page.\\
+
+b & put it on the bottom of a page.\\
+
+p & put it on an individual page.\\
+
+! & place it rigidly as placement specifier requested.\\
+
+\hline
+\end{tabular}
+
+Figure~\ref{Empty} is an example of Pop-Art.
+
+\begin{figure}[!hbp]
+
+\makebox[\textwidth]{\framebox[5cm]{\rule{0pt}{5cm}}} \caption{Five
+by Five in Centimetres.} \label{Empty}
+
+\end{figure}
+
+\section{Protect Fragile Commands\protect\footnote{For example,protecting my footnote.}}
+
+Without \verb|\protect|,I can't even put a footnote for the title of
+a section.
+
+\section{Creating two columns in article, report or book}
+
+\begin{itemize}
+\item http://texblog.org/2007/08/11/creating-two-columns-in-article-report-or-book/
+\item http://yihui.name/en/2007/10/multicol-multi-column-pages-in-latex/
+\item http://timmurphy.org/2010/06/23/adding-a-two-column-section-to-a-latex-document/
+\end{itemize}
+
+\subsection{Whole document (using article to write a paper):}
+
+The only thing you need to do is changing the first command of your Latex-file.
+
+\begin{verbatim}
+\documentclass[11pt,twocolumn]{article}
+\end{verbatim}
+
+It will automatically create two columns in the entire document.
+
+\subsection{Single pages:}
+
+The command \verb|\twocolumn| starts a new page having two columns. Accordingly, \verb|\onecolumn| starts a new page with a single column assuming you are in a two column environment as described above. Both commans do not take any arguments.
+
+The is a way to define the distance between the two columns, use
+
+\begin{verbatim}
+\setlength{\columnsep}{distance}
+\end{verbatim}
+
+If you need a line to separate the columns, the following command will do the job:
+
+\begin{verbatim}
+\setlength{\columnseprule}{thickness}
+\end{verbatim}
+
+\subsection{Part of a page:}
+
+\begin{verbatim}
+...
+\usepackage{multicol}
+...
+% 3 columns
+\begin{multicols}{3}    
+A long text...
+\end{multicols}
+\end{verbatim}
+
+\begin{multicols}{3}    % 3 columns
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac lectus quis eros molestie vehicula. Maecenas eleifend imperdiet ante, eu pulvinar elit tincidunt in. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla facilisi. Pellentesque justo velit, iaculis quis dolor egestas, elementum pretium velit. Nulla est dui, tincidunt dictum porta vel, varius ut mi. Integer nec elit eget sapien faucibus sagittis in in enim. Nam dictum accumsan lacinia. Maecenas dolor quam, faucibus id sodales faucibus, fermentum sed leo. Maecenas semper suscipit rhoncus. Sed eget commodo tortor, ac faucibus libero. Morbi libero erat, pharetra sit amet purus nec, vehicula rutrum tortor. Morbi in sem accumsan, adipiscing sapien eget, suscipit lacus. Suspendisse potenti. Vivamus convallis in orci in vehicula.
+
+Quisque vulputate euismod mollis. Donec dignissim arcu erat, quis sagittis turpis porta id. Phasellus ultrices diam a mi consequat sodales. Vestibulum interdum, orci ut dictum congue, enim quam consectetur risus, in adipiscing sapien turpis id justo. Nunc interdum non sem ut auctor. Nunc laoreet ac ipsum molestie dictum. Sed ullamcorper dolor a suscipit feugiat. Praesent eleifend mi arcu, ut blandit eros fermentum sit amet. Suspendisse aliquet augue magna, vitae lobortis libero adipiscing et. Nam in suscipit leo. Maecenas velit dolor, tristique vel auctor ut, rhoncus sed odio. Sed diam sapien, adipiscing nec enim sed, scelerisque sollicitudin dolor. Quisque tempor erat ut nisi faucibus tempor.
+
+Aliquam suscipit ante vel mi congue scelerisque. Etiam lacus magna, posuere in viverra eget, iaculis at nisi. Etiam quam nibh, semper sit amet aliquam vel, fringilla sit amet tellus. Phasellus tristique enim vel semper auctor. Aenean consectetur commodo mauris, tincidunt ornare diam aliquam eget. Aliquam erat volutpat. Vivamus commodo, justo vel accumsan ornare, velit augue gravida velit, ac placerat tortor diam eget metus. Etiam vitae bibendum nulla, at cursus dolor. Praesent malesuada pharetra pretium. Quisque aliquam mollis velit, non rutrum odio viverra nec. Vivamus adipiscing pulvinar ligula, sit amet convallis sem dictum eu.
+\end{multicols}

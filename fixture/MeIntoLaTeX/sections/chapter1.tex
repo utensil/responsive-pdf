@@ -1,0 +1,226 @@
+\chapter{Basics}
+
+\section{Spaces and Reserved Symbols}
+
+
+It does not matter whether you enter one or several spaces after a
+word.
+
+An empty line starts a new paragraph.
+
+These symbols have to be slashed: \# \$ \% \^{} \& \_ \{ \} \~{}
+
+But if we slash $\backslash$ will get an \\ line break,it's the same
+as the
+\newline $\backslash$newline.
+
+\LaTeX{} will ignore the spaces after an order.
+
+\ldots
+\section{Hyphenation}
+
+We can tell \LaTeX\ how to hyphenate,for example,this long long word: su\-per\-cal\-%
+i\-frag\-i\-lis\-tic\-ex\-pi\-%
+al\-i\-do\-cious.
+
+We can tell \LaTeX\ not to hyphenate,for example,this long long
+word: \mbox{supercalifragilisticexpialidocious}.
+
+This will cause an ``underfull hbox''.
+
+If we lower the quality demand,\LaTeX\ will do it like this:\sloppy
+\mbox{supercalifragilisticexpialidocious}.
+
+That's horrible,isn't it?So we have to resume it.\fussy
+We can draw a quad around the
+texts:\fbox{supercalifragilisticexpialidocious}
+
+\section{Special Symbols}
+
+``sth''
+
+`another sth'
+
+-
+
+--
+
+---
+
+$-1$
+
+sth\~ sth
+
+sth\~{}sth
+
+$\sim$
+
+$-30\,^{\circ}\mathrm{C}$
+
+ff
+
+f\mbox{}f
+
+H\^otel,
+
+na\"\i ve
+
+\'el\`eve
+
+sm\o rrebr\o d
+
+!`Se\~norita!
+
+Sch\"onbrunner Schlo\ss{} Stra\ss e
+
+\`o{} \'o{} \^o{} \~o{} \=o{} \.o{} \"o{}
+
+\c c \u o \v o \H o \c o \d o \b o \t oo
+
+\oe{} \OE{} \ae{} \AE{} \aa{} \AA{}
+
+\o{} \O{} \l{} \L{} \i{} \j{}
+
+!`{} ?`
+
+Mr.~Smith was happy to see her.
+
+I like BASIC\@. What about you?
+
+\section{Structrue}
+
+$\backslash$documentclass[options]\{class\}
+
+\subsection{Classes}
+
+article
+
+report
+
+book
+
+slides
+
+\subsection{Options}
+
+10pt[11pt,12pt\ldots]
+
+letterpaper [a4paper,a5paper,b5paper,executivepaper,legalpaper\ldots]
+
+fleqn: Left align the math formulas.
+
+leqno: Put the serial number of math formulas on its left.
+
+titlepage, notitlepage
+
+onecolumn, twocolumn
+
+twoside, oneside
+
+openright, openany: Where the new chapter starts.
+
+\subsection{Layers}
+
+$\backslash$part\{\ldots\}
+
+$\backslash$chapter\{\ldots\}
+
+$\backslash$section\{\ldots\}
+
+$\backslash$subsection\{\ldots\}
+
+$\backslash$subsubsection\{\ldots\}
+
+$\backslash$paragragh\{\ldots\}
+
+$\backslash$subparagragh\{\ldots\}
+
+\section{Cross Reference}
+
+\label{Cross Reference} See section \ref{Cross Reference} on page
+\pageref{Cross Reference}.
+
+\section{FootNote}
+
+See the footnote\footnote{We don't need to say anything here.}.
+
+\section{Emphasizing}
+
+You can use \underline{$\backslash$underline},but
+\emph{$\backslash$emph} is recommended.
+
+\textit{You can also \emph{emphasize} text if it is set in italics,}
+
+\textsf{in a \emph{sans-serif} font,} \texttt{or in
+\emph{typewriter} style.}
+
+\section{Text Fonts}
+
+\textrm{Roman}
+
+\textsf{Sans Serif}
+
+\texttt{Typewriter}
+
+\textmd{medium}
+
+\textbf{Bold Face}
+
+\textup{Upright}
+
+\textit{italic}
+
+\textsl{slanted}
+
+\textsc{Small Caps}
+
+\section{Text Size}
+
+\tiny{Tiny}
+
+\scriptsize{Scriptsize}
+
+\footnotesize{Footnotesize}
+
+\small{Small}
+
+\normalsize{Normalsize}
+
+\large{large}
+
+\Large{Large}
+
+\LARGE{LARGE}
+
+\huge{huge}
+
+\Huge{Huge}
+
+\normalsize{} %To Recover.
+
+\section{New Command}
+
+It's not recommended to set a font or a size for some texts
+directly,you should pack it in a style and apply the style to all
+the texts for which you want to set the font and the size.
+
+Use
+$\backslash$newcommand\{\emph{name}\}[\emph{num}]\{\emph{definition}\}\
+to pack styles or other commands.
+
+Use
+$\backslash$renewcommand\{\emph{name}\}[\emph{num}]\{\emph{definition}\}\
+to repack it.
+
+For example:
+
+\newcommand{\Ltt}[1]{\Large{\texttt{#1}}}
+
+\Ltt{Large Typewriter}
+
+\renewcommand{\Ltt}[1]{\Huge{\textsf{#1}}}
+
+\Ltt{Huge Sans Serif}
+
+\normalsize{}
+

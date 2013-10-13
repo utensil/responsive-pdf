@@ -1,0 +1,754 @@
+\chapter{Math Formulas}
+
+Yeah!Eventually we've reached the most powerful function and also
+the most exciting part of \LaTeX---Math formulas!We might use the
+AMS-\LaTeX\ or other macros.
+
+\section{Math Modes}
+
+\subsection{Math Formulas In Paragraphs}
+
+There are three choice:
+
+\verb|\begin{math}|\emph{Formula}\verb|\end{math}|
+
+\verb|$|\emph{Formula}\verb|$|
+
+\verb|\(| \emph{Formula} \verb|\)|
+
+\subsection{Math Formulas In Display Mode}
+
+The formula will stand alone,and will not be enumerated.
+
+\verb|\begin{displaymath}|\emph{Formula}\verb|\end{displaymath}|
+
+\verb|\[| \emph{Formula} \verb|\]|
+
+\subsection{Math Formulas In Equation Mode}
+
+The formula will stand alone,and will be enumerated.If we use
+\verb|\begin{equation*}|,the equations will not be enumerated.
+
+\verb|\begin{equation}|\emph{Formula}\verb|\end{equation}|
+
+\subsection{Examples}
+
+Formulas in paragraph,$\lim_{n \to \infty} \sum_{k=1}^n
+\frac{1}{k^2} = \frac{\pi^2}{6}$.
+
+Formulas in display mode:
+
+\begin{displaymath}
+\lim_{n \to \infty} \sum_{k=1}^n \frac{1}{k^2} = \frac{\pi^2}{6}
+\end{displaymath}
+
+Formulas in equation mode\footnote{With Package \emph{amsfonts}\ or
+\emph{amssymb},we can have the blackboard bold font for sets.}:
+
+\begin{equation}
+\forall x \in \mathbb{R}: \qquad x^{2} \geq 0
+\end{equation}
+
+Every letter in math mode will be treated as a variable,except when
+it's in \verb|\textrm{}|\ or \verb|\mathrm{}|:
+
+\begin{equation}
+x^{2} \geq 0\qquad \textrm{for all }x\in\mathbb{R}
+\end{equation}
+
+The difference between \verb|\mathrm{}|\ and \verb|\textrm{}|\ as
+follows\footnote{If Package \emph{amsmath} is used,there will be no
+difference.}:
+
+\begin{equation}
+2^{\textrm{nd}} \quad 2^{\mathrm{nd}}
+\end{equation}
+
+See Section \ref{Align}\ on Page \pageref{Align} to learn to deal
+with equations.
+
+\section{Math Spacing}
+
+\subsection{Units}
+
+\begin{tabular}{c @{\quad} l}
+
+pt & point,$\frac{1}{72.27}$\ inch.\\\\
+
+bp & Adobe big point,$\frac{1}{72}$\ inch.\\\\
+
+pc & pica,12pt\\\\
+
+mm & millimeter\\\\
+
+cm & centimeter\\\\
+
+in & inch,25.4mm\\\\
+
+em & similar to the width of M.\\\\
+
+ex & similar to the height of x.
+
+\end{tabular}
+
+\subsection{Spaces}
+
+\begin{tabular}{c @{\quad} l}
+
+\verb|\,| & $\frac{3}{18}$\ quads.\\\\
+
+\verb|\:| & $\frac{4}{18}$\ quads.\\\\
+
+\verb|\;| & $\frac{5}{18}$\ quads.\\\\
+
+\verb|\!| & $-\frac{3}{18}$\ quads.\\\\
+
+\verb|\quad|\ & 1 quad,similar to the width of M.\\\\
+
+\verb|\qquad|\ & 2 quads.
+
+\end{tabular}
+
+\subsection{Phantom}
+
+\verb|\phantom|\ reserves room for something that exists but not to
+be displayed.
+
+See examples:\\
+
+\begin{tabular}{c @{\quad} l}
+
+${}^{12}_{6}\textrm{C}$ & \verb|{}^{12}_{6}\textrm{C}|\\\\
+
+${}^{12}_{\phantom{0}6}\textrm{C}$ & \verb|{}^{12}_{\phantom{0}6}\textrm{C}|\\\\
+
+$\Gamma_{ij}^{k}$ & \verb|\Gamma_{ij}^{k}|\\\\
+
+$\Gamma_{ij}^{\phantom{ij}k}$ & \verb|\Gamma_{ij}^{\phantom{ij}k}|
+\end{tabular}\\\\
+
+See Section \ref{Sup and Sub} on Page \pageref{Sup and Sub} to learn
+\emph{Superscript and Subscript}.
+
+\section{Math Sizing}
+
+\subsection{Setting Size}
+
+\[\displaystyle{\backslash\mathrm{displaystyle\{\}}}\]
+
+\[\textstyle{\backslash\mathrm{textstyle\{\}}}\]
+
+\[\scriptstyle{\backslash\mathrm{scriptstyle\{\}}}\]
+
+\[\scriptscriptstyle{\backslash\mathrm{scriptscriptstyle\{\}}}\]
+
+\subsection{Pairing size}
+
+\begin{tabular}{|l|}
+
+\hline \verb|\Bigg(\bigg(\Big(\big(\big)\Big)\bigg)\Bigg)|\\
+
+\hline
+\end{tabular}
+
+\[\Bigg(\bigg(\Big(\big(\big)\Big)\bigg)\Bigg)\]
+
+\begin{tabular}{|l|}
+
+\hline\verb@\Bigg\{\bigg\{\Big\{\big\{\big\}\Big\}\bigg\}\Bigg\}@\\
+
+\hline
+\end{tabular}
+
+\[\Bigg\{\bigg\{\Big\{\big\{\big\}\Big\}\bigg\}\Bigg\}\]
+
+\begin{tabular}{|l|}
+
+\hline\verb@\Bigg\|\bigg\|\Big\|\big\|\big\|\Big\|\bigg\|\Bigg\|@\\
+
+\hline
+\end{tabular}
+
+\[\Bigg\|\bigg\|\Big\|\big\|\big\|\Big\|\bigg\|\Bigg\|\]
+
+\begin{tabular}{|l|}
+
+\hline\verb|1 + ( \frac{1}{ 1-x^{2} } ) ^3|\\
+
+\hline
+\end{tabular}
+
+\[1 + ( \frac{1}{ 1-x^{2} } ) ^3\]
+
+Use the \verb|\left| and \verb|\right| pairs to determine the
+correct sizes of symbols.
+
+
+
+\begin{tabular}{|l|}
+
+\hline\verb|1 + \left( \frac{1}{ 1-x^{2} } \right) ^3|\\
+
+\hline
+\end{tabular}
+
+\[1 + \left( \frac{1}{ 1-x^{2} } \right) ^3\]
+
+If there is nothing on the right side,use ``\verb|\right.|''.
+
+
+
+\begin{tabular}{|l|}
+
+\hline
+\verb|y = \left\{| \\
+
+\verb| \begin{array}{ l l }|\\
+
+\verb| a & x \leq -5\\\\|\\
+
+\verb| b+x & -5 < x < 7\\\\|\\
+
+\verb| l & x \geq 7|\\
+
+\verb| \end{array}|\\
+
+\verb| \right.|\\
+
+\hline
+\end{tabular}\\
+
+\[y = \left\{ \begin{array}{ll}
+
+a & x \leq -5\\\\
+
+b+x & -5 < x < 7\\\\\
+
+l & x \geq 7
+\end{array} \right.\]\\
+
+See Section \ref{Array} on Page \pageref{Array} to learn Environment
+\emph{Array}.
+
+\subsection{Bold Fonts}
+
+\begin{tabular}{c @{\quad} c}
+
+\verb|$\mu, M$| & $\mu, M$\\\\
+
+\verb|$\mathbf{\mu},\mathbf{M}$| & $\mathbf{\mu},\mathbf{M}$\\\\
+
+\verb|\mbox{\boldmath $\mu, M$}| & \mbox{\boldmath $\mu, M$}
+
+\end{tabular}\\\\
+
+\verb|\boldmath| must be used outside the math mode,or in the
+\verb|\mbox{}| in the math mode.
+
+\section{Math Fonts}
+
+\begin{tabular}{l @{\quad} c }
+
+\verb|\mathrm{ABCdef}| & $\mathrm{ABCdef}$\\\\
+
+\verb|\mathit{ABCdef}| & $\mathit{ABCdef}$\\\\
+
+\verb|\mathnormal{ABCdef}| & $\mathnormal{ABCdef}$\\\\
+
+\verb|\mathcal{ABC}| & $\mathcal{ABC}$\\\\
+
+\verb|\mathfrak{ABCdef}| & $\mathfrak{ABCdef}$\\\\
+
+\verb|\mathbb{ABC}| & $\mathbb{ABC}$\\\\
+
+\verb|\mathtt{ABCdef}| & $\mathtt{ABCdef}$\\\\
+
+\verb|\mathsf{ABCdef}| & $\mathsf{ABCdef}$\\\\
+
+\verb|\mathbf{ABCdef}| & $\mathbf{ABCdef}$
+\end{tabular}
+
+
+
+The command \verb|\mathfrak{ABCdef}|\ requires Package
+\emph{eufrak}.
+
+\section{Frequently Used Symbols}
+
+\subsection{Dots}
+
+Observe carefully,then you will see that \verb|\ldots| generates lower dots than \verb|\cdots|.\\
+
+\begin{tabular}{l @{\quad} c}
+
+\verb|\ldots| & $\ldots$\\\\
+
+\verb|\cdot| & $\cdot$\\\\
+
+\verb|\cdots| & $\cdots$\\\\
+
+\verb|\vdots| & $\vdots$\\\\
+
+\verb|\ddots| & $\ddots$
+\end{tabular}\\\\
+
+See a practical example in Section \ref{Array} on Page
+\pageref{Array}.
+
+\subsection{Superscript and Subscript}\label{Sup and Sub}
+
+\begin{tabular}{l @{\quad} c}
+
+\verb|a_1| & $a_1$\\\\
+
+\verb|x^2| & $x^2$\\\\
+
+\verb|a_{ij}| & $a_{ij}$\\\\
+
+\verb|x^{y^z}| & $x^{y^z}$\\\\
+
+\verb|e^{x^2} \neq {e^x}^2| & $e^{x^2} \neq {e^x}^2$\\\\
+
+\verb|{}^{12}_{\phantom{0}6}\mathrm{C}| &
+${}^{12}_{\phantom{0}6}\mathrm{C}$
+\end{tabular}
+
+
+
+\^\ or \_\ might tinily changes its position and meaning,for
+example,see Section \ref{+*} on Page \pageref{+*},they turn out to
+be upper and lower limits.
+
+\subsection{Square Root}
+
+\begin{tabular}{l @{\quad} c}
+
+\verb|\sqrt{a}| & $\sqrt{a}$\\\\
+
+\verb|\sqrt[n]{a}| & $\sqrt[n]{a}$\\\\
+
+\verb|\surd| & $\surd$\\\\
+
+\verb|\sqrt{ x^{2}+\sqrt{y} }| & $\sqrt{ x^{2}+\sqrt{y} }$
+\end{tabular}
+
+\subsection{Line and Brace}
+
+\begin{tabular}{l @{\quad} c}
+
+\verb|\overline{m+n}| & $\overline{m+n}$\\\\
+
+\verb|\underline{m+n}| & $\underline{m+n}$\\\\
+
+\verb|\underbrace{ a+b+\cdots+z }_{26}| & $\underbrace{ a+b+\cdots+z
+}_{26}$\\\\
+
+\verb|\overbrace{ a+b+\cdots+z }^{26}| & $\overbrace{ a+b+\cdots+z }^{26}$\\\\
+
+\end{tabular}
+
+\subsection{Vector}
+
+\begin{tabular}{l @{\quad} c}
+
+\verb|\vec a| & $\vec a$\\\\
+
+\verb|\overrightarrow{AB}| & $\overrightarrow{AB}$\\\\
+
+\verb|\overleftarrow{AB}| & $\overleftarrow{AB}$
+\end{tabular}
+
+\subsection{Fraction}
+
+\begin{displaymath}
+\begin{array}{l c}
+
+\verb|1/2| & 1/2\\\\
+
+\verb|3\frac{1}{2}| & 3\frac{1}{2}\\\\
+
+\end{array}
+\end{displaymath}\\
+
+\begin{tabular}{|l|}
+
+\hline
+\verb|y^{}_{\mathrm{A}}= \displaystyle\frac| \\
+
+\verb|{|\\
+
+\verb| p^*_{\mathrm{A}} x^{}_{\mathrm{A}}| \\
+
+\verb|}| \\
+
+\verb|{| \\
+
+\verb| p^*_{\mathrm{A}} x^{}_{\mathrm{A}}| \\
+
+\verb|+| \\
+
+\verb| p^*_{\mathrm{B}}(1-x^{}_{\mathrm{A}})| \\
+
+\verb|}| \\
+
+\hline
+\end{tabular}\\
+
+\begin{displaymath}
+y^{}_{\mathrm{A}}= \displaystyle\frac{p^*_{\mathrm{A}} x^{}_{\mathrm{A}}}
+{
+p^*_{\mathrm{A}} x^{}_{\mathrm{A}}
++
+p^*_{\mathrm{B}}(1-x^{}_{\mathrm{A}})
+}
+\end{displaymath}\\
+
+\begin{tabular}{|l| }
+
+\cline{1-1}
+
+\verb|N_{\mathrm{OG}}= \frac| \\
+
+\verb|{| \\
+
+\verb| y^{}_1 - y^{}_2| \\
+
+\verb|}| \\
+
+\verb|{| \\
+
+\verb| \displaystyle\frac| \\
+
+\verb| {| \\
+
+\verb| (y^{}_1 - y^*_1) - (y^{}_2 - y^*_2)| \\
+
+\verb| }| \\
+
+\verb| {| \\
+
+\verb| \ln\frac{y^{}_1 - y^*_1}{y^{}_2 - y^*_2}| \\
+
+\verb| }| \\
+
+\verb|}| \\
+
+\cline{1-1}
+
+\end{tabular}
+
+
+
+\begin{displaymath}
+N_{\mathrm{OG}}= \frac
+{
+y^{}_1 - y^{}_2
+}
+{
+\displaystyle\frac
+{
+(y^{}_1 - y^*_1) - (y^{}_2 - y^*_2)
+}
+{
+\ln\frac{y^{}_1 - y^*_1}{y^{}_2 - y^*_2}
+}
+}
+\end{displaymath}
+
+\subsection{Binomial Coefficients And Customized Fraction}
+
+Without Package \emph{amsmath},we can only use
+\verb|{n \choose m}|\ or\ \verb|{x \atop y+2}| to generate the
+binomial coefficients or similar structures:
+
+\begin{displaymath}
+{n \choose m} \qquad {x \atop y+2}
+\end{displaymath}
+
+With Package \emph{amsmath},we can use \verb|\binom{n}{m}|\ to
+generate binomial coefficients:
+
+\begin{displaymath}
+\binom{n}{m}
+\end{displaymath}
+
+But the most powerful part is the command
+\verb|\genfrac{}{}{}{}{}{}|,it has six
+arguments:\\
+
+Argument 5 and 6 are the numerator and the denominator.
+
+Argument 1 and 2 are the left delimiter and the right delimiter.`.'\
+means there are no delimiter.
+
+Argument 3 is the thickness of the line between the numerator and
+the denominator,set it to 0pt to make it invisible.
+
+Argument 4 is the size of the numerator and the
+denominator.displaystyle = 0, textstyle = 1, scriptstyle = 2,
+scriptscriptstyle = 3.\\
+
+The Command \verb|\genfrac{(}{)}{0pt}{}{n}{m}|\ works exactly the
+same as \verb|\binom{n}{m}|.
+
+\begin{displaymath}
+\genfrac{(}{)}{0pt}{}{n}{m}
+\end{displaymath}
+
+\subsection{Sum,Product And Calculus}\label{+*}
+
+\verb|\sum_{i=1}^{n}|:
+\[\sum_{i=1}^{n}\]
+
+\verb|\int_{0}^{\frac{\pi}{2}}|:
+\[\int_{0}^{\frac{\pi}{2}}\]
+
+\verb|\prod_\epsilon|:
+\[\prod_\epsilon\]
+
+\verb|\iint_D|:
+\[\iint_D\]
+
+\verb|\iiint_V|:
+\[\iiint_V\]
+
+\verb|\idotsint_{\mathbb{R^{\mathrm n}}}|:
+\[\idotsint_{\mathbb{R^{\mathrm n}}}\]
+
+\section{Math Array}
+
+\subsection{Array}\label{Array}
+
+\begin{tabular}{|l|}
+
+\hline
+\verb|\mathbf{X} = \left( \begin{array}{ccc}|\\
+
+\verb|x_{11} & x_{12} & \ldots \\|\\
+
+\verb|x_{21} & x_{22} & \ldots \\|\\
+
+\verb|\vdots & \vdots & \ddots|\\
+
+\hline
+\end{tabular}\\\\
+
+\begin{displaymath}
+\mathbf{X} = \left( \begin{array}{ccc}
+
+x_{11} & x_{12} & \ldots \\
+
+x_{21} & x_{22} & \ldots \\
+
+\vdots & \vdots & \ddots
+\end{array} \right)
+\end{displaymath}\\
+
+\begin{tabular}{|l|}
+
+\hline
+\verb@\left(\begin{array}{c|c}@\\
+
+\verb|1 & 2 \\|\\
+
+\verb|\hline|\\
+
+\verb|3 & 4|\\
+
+\verb|\end{array}\right)|\\
+
+\hline
+\end{tabular}\\
+
+\begin{displaymath}
+\left(\begin{array}{c|c}
+
+1 & 2 \\
+
+\hline 3 & 4
+\end{array}\right)
+\end{displaymath}
+
+\subsection{Eqnarray}
+
+Environment \emph{Eqnarray} must be used outside the math
+mode,because it's an environment similar to Environment
+\emph{Equation}.\\
+
+\begin{tabular}{|l|}
+
+\hline
+\verb|\begin{eqnarray}|\\
+
+\verb|f(x) & = & \cos x \\|\\
+
+\verb|f'(x) & = & -\sin x \\|\\
+
+\verb|\int_{0}^{x} f(y)\mathrm dy & = & \sin x|\\
+
+\verb|\end{eqnarray}|\\
+
+\hline
+\end{tabular}\\
+
+\begin{eqnarray}
+f(x) & = & \cos x \\
+f'(x) & = & -\sin x \\
+\int_{0}^{x} f(y)\mathrm dy & = & \sin x
+\end{eqnarray}
+
+Put the whole environment in \verb|{\setlength\arraycolsep{2pt} }|,
+then the space around ``='' will be smaller:\\
+
+{\setlength\arraycolsep{2pt}
+
+\begin{eqnarray}
+f(x) & = & \cos x \\
+f'(x) & = & -\sin x \\
+\int_{0}^{x} f(y)\mathrm dy & = & \sin x
+\end{eqnarray}
+
+}
+
+Use Environment \emph{Eqnarray} to split a long equation:\\
+
+\begin{tabular}{|l|}
+\hline
+\verb|\begin{eqnarray}|\\
+
+\verb|\lefteqn{ \cos x = 1 -\frac{x^{2}}{2!} +{} }|\\
+
+\verb|\nonumber\\|\\
+
+\verb|& & {}+\frac{x^{4}}{4!} -\frac{x^{6}}{6!}+{}\cdots|\\
+
+\verb|\end{eqnarray}|\\
+
+\hline
+\end{tabular}\\
+
+\begin{eqnarray}
+\lefteqn{ \cos x = 1 -\frac{x^{2}}{2!} +{} }
+\nonumber\\
+& & {}+\frac{x^{4}}{4!} -\frac{x^{6}}{6!}+{}\cdots
+\end{eqnarray}
+
+\subsection{Align}\label{Align}
+
+With Package \emph{amsmath},we can use Environment \emph{Align}\ to
+deal with equations.Use \& to tell \LaTeX\ how to align.Observe the
+usage of Environment \emph{Subequations}.
+
+\begin{tabular}{|l|}
+\hline
+\verb|\begin{subequations}|\\
+
+\verb|\begin{align}|\\
+
+\verb|x & \equiv 2 \pmod 3 \\|\\
+
+\verb|x & \equiv 3 \pmod 5 \\|\\
+
+\verb|\end{align}|\\
+
+\verb|\end{subequations}|\\
+
+\hline
+\end{tabular}\\
+
+\begin{subequations}
+\begin{align}
+x & \equiv 2 \pmod 3 \\
+x & \equiv 3 \pmod 5 \\
+x & \equiv 2 \pmod 7
+\end{align}
+\end{subequations}
+
+\section{Math Theorem}
+
+To initialize a Theorem System,we should put the following
+declaration in the preamble area(The area between
+\verb|\documentclass| and \verb|\begin{document}| is called the
+\emph{preamble}).\\
+
+\begin{tabular}{|l|}
+
+\hline
+\verb|\newtheorem{|\emph{name}\verb|}[|\emph{counter}\verb|]{|\emph{text}\verb|}[|\emph{section}\verb|]|\\
+
+\hline
+\end{tabular}\\
+
+\emph{name}\ is the identifier of the theorem for \LaTeX,and
+\emph{text}\ will be displayed as the name of the theorem.
+
+\emph{counter}\ and \emph{section}\ shall not be given at the same
+time.\emph{counter}\ is the identifier of the counter for \LaTeX,it
+shall be the name of another theorem.If we replace \emph{section}\
+by ``section'',``chapter'' or ``subsection'',the theorem will be
+enumerated by section,chapter or subsection.\\
+
+For example,declare like this in the preamble,\\
+
+\begin{tabular}{|l|}
+\hline \verb|\newtheorem{Theorem}{定理}[section]|\\
+
+\hline
+\end{tabular}\\
+
+and then,\\
+
+\begin{tabular}{|l|}
+\hline
+\verb|\begin{Theorem}|\\
+
+\verb|sth.|\\
+
+\verb|\end{Theorem}|\\
+
+\hline
+\end{tabular}\\
+
+will generate:\\
+
+\begin{Theorem}
+sth.
+\end{Theorem}
+
+And declare like this in the preamble,\\
+
+\begin{tabular}{|l|}
+\hline \verb|\newtheorem{FirstTheorem}{定理}|\\
+
+\hline \verb|\newtheorem{NextTheorem}[Theorem]{定理}|\\
+
+\hline
+\end{tabular}\\
+
+and then,\\
+
+\begin{tabular}{|l|}
+\hline
+\verb|\begin{FirstTheorem}|\\
+
+\verb|Something.|\\
+
+\verb|\end{FirstTheorem}|\\
+
+\verb|\begin{NextTheorem}|\\
+
+\verb|Some other thing.|\\
+
+\verb|\end{NextTheorem}|\\
+
+\hline
+\end{tabular}\\
+
+\begin{FirstTheorem}
+Something.
+\end{FirstTheorem}
+
+\begin{NextTheorem}
+Some other thing.
+\end{NextTheorem}
+
